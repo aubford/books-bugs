@@ -34,13 +34,13 @@ router.get('/books/:id/edit', function(req, res, next) {
   });
 });
 
-router.post('books/:id', function (req, res, next) {
+router.post('/books/:id', function (req, res, next) {
   Books().where('id', req.params.id).update(req.body).then(function (results) {
     res.redirect('/books');
   })
 });
 
-router.post('books/:id/delete', function (req, res, next) {
+router.post('/books/:id/delete', function (req, res, next) {
   Books().where('id', req.params.id).del().then(function (results) {
     res.redirect('/books');
   })
